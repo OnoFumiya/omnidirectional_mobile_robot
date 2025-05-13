@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">独立4輪ステアリング機構を用いた全方向移動ロボットの車輪制御</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <!-- <span class="author-block">
@@ -65,25 +65,25 @@
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">小野郁哉<br>創価大学<br>創価大学卒業研究2023</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">小野郁哉<br>創価大学<br>創価大学卒業研究（2023年度）</span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://onofumiya.github.io/omnidirectional_mobile_robot/static/pdfs/ono_graduation_research_paper.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
                         </span>
-                        <span>Paper</span>
+                        <span>卒業論文</span>
                       </a>
                     </span>
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -91,11 +91,11 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/OnoFumiya/navigation_stack/tree/ydwa" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -105,7 +105,7 @@
                 </span>
 
                 <!-- ArXiv abstract Link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -113,7 +113,7 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
             </div>
           </div>
         </div>
@@ -128,7 +128,6 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
         <source src="static/videos/banner_video.mp4"
         type="video/mp4">
       </video>
@@ -145,10 +144,21 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">概要</h2>
         <div class="content has-text-justified">
+          <!--  -->
+          <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+            <source src="static/videos/banner_video.mp4"
+            type="video/mp4">
+          </video> -->
+          <!--  -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            著者が所属する大学の研究室（創価大学 崔研究室）では，全方向移動ロボットにSOBIT PROを作成した．
+            このロボットは独立４輪ステアリング機構を用いている．
+            この独立４輪ステアリングロボットでは，把持の際に物体に対して姿勢を保ったまま移動することができたり，差動二輪機構のロボットでは実現できなかった動きの再現が可能となった．
+            しかし，自律移動といった細かい移動に対しては，これまで差動二輪機構と同じ動きしかしてこなかった．
+            そこで今回，独立４輪機構を自律移動にも活かすための4輪の独立した制御とそれを用いた研究開発を行う．
+            具体的には差動2輪モデルでの従来の自律移動に加え，歩行者といった逐次回避の必要な障害物の回避に横方向にDynamic Window Approachを適応し，一時的な移動方向の拡張をする制御を行う．
           </p>
         </div>
       </div>
@@ -158,34 +168,89 @@
 <!-- End paper abstract -->
 
 
+<!-- Paper -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">本研究の社会的背景</h2>
+        <div class="content has-text-justified">
+          <!--  -->
+          <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+            <source src="static/videos/banner_video.mp4"
+            type="video/mp4">
+          </video> -->
+          <!--  -->
+          <!-- <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/> -->
+          <!--  -->
+          <p>
+            ロボットが自律的に人の生活を支援することが求められている．
+            人にものを運んだり，人の荷物運搬を代替するなど幅広い活躍が期待できる．
+
+            それらの生活支援には，ロボットの柔軟な移動が不可欠である．
+            例えば物体を把持する場合に，ロボット全体が物体の把持姿勢に合わせることは，マニピュレーションに追加の自由度を持たせることができる．
+            また，自律移動における経路変更に対して，差動二輪機構のようなその場回転のみの対応では，移動に遅れてしまうという課題がある．
+            特に，移動するワゴンや歩行者など逐次回避する必要のある障害物がある環境でロボットが移動をする場合，経路変更に対して，迅速かつ柔軟に回避する必要がある．
+            そこで本文では，SOBIT PROの制御を中心とした新たな車輪制御の手法と，その制御を用いた歩行者回避の検証実験について述べる．
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper -->
+
+
+<!-- Paper -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">従来の課題</h2>
+        <div class="content has-text-justified">
+          <!--  -->
+          <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+            <source src="static/videos/banner_video.mp4"
+            type="video/mp4">
+          </video> -->
+          <!--  -->
+          <!-- <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/> -->
+          <!--  -->
+          <p>
+            これまで，SOBIT PROは
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper -->
+
+
 <!-- Image carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- Your image here -->
         <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           First image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
         <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           Second image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
         <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
          Third image description.
        </h2>
      </div>
      <div class="item">
-      <!-- Your image here -->
       <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
         Fourth image description.
@@ -194,56 +259,51 @@
   </div>
 </div>
 </div>
-</section>
+</section> -->
 <!-- End image carousel -->
 
 
 
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
           <div class="publication-video">
-            <!-- Youtube embed code here -->
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
 
 
 <!-- Video carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
             <source src="static/videos/carousel1.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
             <source src="static/videos/carousel2.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
             <source src="static/videos/carousel3.mp4"
             type="video/mp4">
           </video>
@@ -251,7 +311,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
 
@@ -260,7 +320,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,17 +330,17 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>BibTex Code Here</code></pre>
     </div>
-</section>
+</section> -->
 <!--End BibTex citation -->
 
 
