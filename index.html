@@ -112,7 +112,7 @@
                   <span class="icon">
                     <!-- <i class="ai ai-arxiv"></i> -->
                   </span>
-                  <span>X（議論）</span>
+                  <span>X(議論)</span>
                 </a>
               </span>
             </div>
@@ -222,7 +222,86 @@
             ロボットへ速度が送られてきた際に，４輪を上の図に示すように制御していた．
             特に，カーブをする速度の場合，自動車のように前方の車輪の方向を切り替えることで実現した．
             しかし，この制御にはいくつか課題がある．
-            この自動車のような車輪制御では，
+            この自動車のような車輪制御では，進行方向の円と車輪で若干の誤差が生じてしまい，車輪に無駄な力が発生する．
+            ロボット自体の進行方向と，それぞれの車輪の円が同心円とならないことが原因としてあげられる．
+            これにより，車輪の破損や車輪からのフィードバック(Odometry)の誤差が大きくなってしまった．
+            また，この制御では直線移動を軸としたカーブにしか対応できておらず，全方向移動ロボットの利点を活かしきれていないことがあげられる．
+            つまり，独立４輪ステアリング機構を用いて，差動二輪の動きを再現している状況であることがわかる．
+            <!-- このような制御では，ロボットの前方から歩行してくる歩行者といった回避に時間をかけたくない移動において遅延の原因となる． -->
+            <!-- 例えば下に示す動画では，前方から来る障害物を回転移動でのみ回避しようとしてしまい，先に歩行者が到達してしまう例である． -->
+            そこで，独立４輪ステアリング機構を用いた全方向移動による自律移動をするための制御を目的とする．
+          </p>
+          <!-- <img src="static/images/base_control.png" alt="MY ALT TEXT"/> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper -->
+
+
+<!-- Paper -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">ロボットの回転から車輪を接線方向にする方向制御と速度制御</h2>
+        <div class="content has-text-justified">
+          <!--  -->
+          <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+            <source src="static/videos/banner_video.mp4"
+            type="video/mp4">
+          </video> -->
+          <!--  -->
+          <!-- <img src="static/images/base_control.png" alt="MY ALT TEXT"/> -->
+          <!--  -->
+          <p>
+            差動二輪モデルでの制御をしている課題を解決するために，４つの車輪それぞれが向くべき方向を算出する必要がある．
+            本手法の焦点はカーブにおける全車輪の方向および速度であるため，カーブの速度が送られてきたことを前提とする．
+            まずロボットに送られてくる速度からロボット全体の旋回についてを，速度の大きさと中心角の角速度という面で算出する．
+            具体的には，ROS/ROS2における速度型メッセージ(geometry_msgs/msg/Twist型)のうち，linear.xとlinear.y，angular.zについての3要素から求まる．
+            こうして得られた速度と中心角速度から，ロボットが動くべき円の中心座標を算出する．
+            この中心座標をすべての車輪から見て同心円上の接線方向に向くことで，ロボットの動きに合わせた車輪の制御となる．
+            これにより，車輪への方向の誤差による負荷が少なくなる．
+            さらに，円の中心座標とロボットの距離，円の中心座標と各車輪との距離，から比を速度の大きさに掛け合わせることで，各車輪ごとに速度を決定することができる．
+            これにより，車輪の速さが各車輪に求められている大きさとなり，滑りによるOdometryの誤差を最小にすることができる．
+            これらのアルゴリズムを下の動画で示す．
+          </p>
+          <!-- <img src="static/images/base_control.png" alt="MY ALT TEXT"/> -->
+          <video poster="" id="tree" autoplay controls muted loop height="100%">
+            <source src="static/videos/sobit_pro_omni_wheel.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper -->
+
+
+<!-- Paper -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">歩行者回避の実験</h2>
+        <div class="content has-text-justified">
+          <!--  -->
+          <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+            <source src="static/videos/banner_video.mp4"
+            type="video/mp4">
+          </video> -->
+          <!--  -->
+          <!-- <img src="static/images/base_control.png" alt="MY ALT TEXT"/> -->
+          <!--  -->
+          <p>
+            この手法を用いて，歩行者を回避する実験を行った．
+            歩行者はロボットの前方から歩行してくるものとして，ロボットは道を譲らなくてはならない状況を想定する．
+            SOBIT PROには，センサーが前方に搭載されている．
+            そのため，今回用いる自律移動では前方の障害物が検知できるようにするため，基本的に差動二輪での動作をする．
+            しかし，歩行者を回避するときは横方向の速度を一時的に出力する移動手法を用いる．
+            これは，「基本的にセンサーに有利な移動をするが，歩行者を回避する場合は回避の迅速さを優先」することに重きを置いている．
           </p>
           <!-- <img src="static/images/base_control.png" alt="MY ALT TEXT"/> -->
         </div>
